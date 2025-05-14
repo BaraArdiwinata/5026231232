@@ -1,0 +1,30 @@
+body {
+    background-color: #FBF6E9;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-family: Comic Neue;
+}
+
+p {
+    color: #5DB996;
+}
+
+a:link {
+    text-decoration: none;
+    color: #85A947;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #123524;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ECE852;
+    font-weight: bold;
+}
+
+.formatheader {
+    font-size: larger;
+}
