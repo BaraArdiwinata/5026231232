@@ -63,6 +63,26 @@ return [
             ]) : [],
         ],
 
+        'mysql_tugas' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL_TUGAS'),
+            'host' => env('DB_HOST_TUGAS', '127.0.0.1'),
+            'port' => env('DB_PORT_TUGAS', '3306'),
+            'database' => env('DB_DATABASE_TUGAS', 'tugas_laravel'),
+            'username' => env('DB_USERNAME_TUGAS', 'root'),
+            'password' => env('DB_PASSWORD_TUGAS', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

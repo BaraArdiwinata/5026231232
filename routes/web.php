@@ -5,6 +5,7 @@ use App\Http\Controllers\Link;
 use App\Http\Controllers\Pegawai2Controller;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\PensilController;
 // import java.io;
 
 
@@ -62,3 +63,12 @@ Route::post('/pegawai/store', [PegawaiController::class, 'store']);
 Route::post('/pegawai/update', [PegawaiController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiController::class, 'cari']);
+
+// CRUD Pensil
+Route::get('/pensil', [PensilController::class, 'index']);
+Route::get('/pensil/tambah', [PensilController::class, 'tambah']);
+Route::get('/pensil/edit/{id}', [PensilController::class, 'edit']);
+Route::post('/pensil/store', [PensilController::class, 'store']);
+Route::post('/pensil/update', [PensilController::class, 'update']);
+Route::get('/pensil/hapus/{id}', [PensilController::class, 'hapus']);
+Route::get('/pensil/cari', [PensilController::class, 'cari']);
