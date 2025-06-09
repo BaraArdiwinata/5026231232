@@ -11,8 +11,8 @@ class PensilController extends Controller
     public function index()
 	{
     	// mengambil data dari table pensil
-		// $pensil = DB::connection('mysql_tugas')->table('pensil')->get();
-        $pensil = DB::connection('mysql_tugas')->table('pensil')->paginate(10);
+		// $pensil = DB::table('pensil')->get();
+        $pensil = DB::table('pensil')->paginate(10);
     	// mengirim data pensil ke view index
 		return view('data_pensil/index3',['pensil' => $pensil]);
 
@@ -31,7 +31,7 @@ class PensilController extends Controller
 	public function store(Request $request)
 	{
 		// insert data ke table pensil
-		DB::connection('mysql_tugas')->table('pensil')->insert([
+		DB::table('pensil')->insert([
 			'merkpensil' => $request->merkpensil,
             'hargapensil' => $request->hargapensil,
             'tersedia' => $request->tersedia,
@@ -46,7 +46,7 @@ class PensilController extends Controller
 	public function edit($id)
 	{
 		// mengambil data pensil berdasarkan id yang dipilih
-		$pensil = DB::connection('mysql_tugas')->table('pensil')->where('ID',$id)->get();
+		$pensil = DB::table('pensil')->where('ID',$id)->get();
 		// passing data pensil yang didapat ke view edit_pensil.blade.php
 		return view('data_pensil/edit_pensil',['pensil' => $pensil]);
 
@@ -56,7 +56,7 @@ class PensilController extends Controller
 	public function update(Request $request)
 	{
 		// update data pensil
-		DB::connection('mysql_tugas')->table('pensil')->where('ID',$request->id)->update([
+		DB::table('pensil')->where('ID',$request->id)->update([
 			'merkpensil' => $request->merkpensil,
             'hargapensil' => $request->hargapensil,
             'tersedia' => $request->tersedia,
@@ -70,7 +70,7 @@ class PensilController extends Controller
 	public function hapus($id)
 	{
 		// menghapus data pensil berdasarkan id yang dipilih
-		DB::connection('mysql_tugas')->table('pensil')->where('ID',$id)->delete();
+		DB::table('pensil')->where('ID',$id)->delete();
 
 		// alihkan halaman ke halaman pensil
 		return redirect('/pensil');
@@ -82,7 +82,7 @@ class PensilController extends Controller
 		$cari = $request->cari;
 
     		// mengambil data dari table pensil sesuai pencarian data
-		$pensil = DB::connection('mysql_tugas')->table('pensil')
+		$pensil = DB::table('pensil')
 		->where('merkpensil','like',"%".$cari."%")
 		->paginate();
 
