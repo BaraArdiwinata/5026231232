@@ -6,6 +6,7 @@ use App\Http\Controllers\Pegawai2Controller;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PensilController;
+use App\Http\Controllers\KaryawanController;
 // import java.io;
 
 
@@ -72,3 +73,10 @@ Route::post('/pensil/store', [PensilController::class, 'store']);
 Route::post('/pensil/update', [PensilController::class, 'update']);
 Route::get('/pensil/hapus/{id}', [PensilController::class, 'hapus']);
 Route::get('/pensil/cari', [PensilController::class, 'cari']);
+
+// CRUD Karyawan
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']);
+Route::get('/karyawan/hapus/{id}', [KaryawanController::class, 'hapus']);
+Route::get('/karyawan/cari', [KaryawanController::class, 'cari']);
