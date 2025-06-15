@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PensilController;
 use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\KeranjangBelanjaController;
 // import java.io;
 
 
@@ -80,3 +81,9 @@ Route::get('/karyawan/tambah', [KaryawanController::class, 'tambah']);
 Route::post('/karyawan/store', [KaryawanController::class, 'store']);
 Route::get('/karyawan/hapus/{id}', [KaryawanController::class, 'hapus']);
 Route::get('/karyawan/cari', [KaryawanController::class, 'cari']);
+
+// CRUD Keranjang Belanja
+Route::get('/keranjang', [KeranjangBelanjaController::class, 'index']);
+Route::get('/keranjang/tambah', [KeranjangBelanjaController::class, 'tambah']);
+Route::post('/keranjang/store', [KeranjangBelanjaController::class, 'store']);
+Route::get('/keranjang/hapus/{id}', [KeranjangBelanjaController::class, 'hapus']);
